@@ -1,0 +1,16 @@
+.healthManage{
+	background-color:#abd241;
+	display:block;
+	height:70px;
+	margin-top:20px;
+	line-height:70px;
+	overflow:hidden;
+}
+
+.healthfont{
+	font-size:15px;
+	margin-right:10px;
+	margin-bottom:20px;
+	color:white;
+	font-weight:bold;
+}

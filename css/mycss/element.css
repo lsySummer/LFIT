@@ -1,0 +1,10 @@
+﻿.s1{
+	background-color:pink;
+	display:block;/*希望使用s1类选择器的元素，按照块元素显示*/
+}
+
+.s2{
+ background-color:blue;
+ width:100px;
+ display:inline;
+}
