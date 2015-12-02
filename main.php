@@ -68,7 +68,7 @@ function login(){
 			</div>
 			<div class="span8" style="margin-top: 5%; margin-left: 2%">
 				<form class="form-horizontal" id="formAction"
-					action="phphandler/sqlhandler.php" method="post">
+					action="phphandler/loginSql.php" method="post">
 
 					<div class="control-group">
 						<label class="control-label" for="username">用户名</label>

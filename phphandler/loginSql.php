@@ -10,15 +10,19 @@ $sql="select * from userBasic where uname='$username' and upass='$password' limi
 $res = sqlite_unbuffered_query($db,$sql);
 if($item = sqlite_fetch_array($res, SQLITE_ASSOC)){
 	$iden = $item["uidentity"];
+	$user_id = $item["uid"];
+	session_start();
+	$_SESSION['gluid']=$user_id;
+
 	switch($iden){
 		case 0:
 			header("Location:../manager/frameManager.html");
 			break;
 		case 1:
-			header("Location:../person/frameperson.html");
+			header("Location:../person/framePerson.php");
 			break;
 		case 2:
-			header("Location:../doctor/frameDoctor.html");
+			header("Location:../doctor/frameDoctor.php");
 			break;
 		case 3:
 			header("Location:../coach/frameCoach.html");
