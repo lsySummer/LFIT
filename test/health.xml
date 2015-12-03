@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <abc>
 	<item>
-		<date>20151201</date>
+		<date>20151101</date>
 		<hr>100</hr>
 		<bp>90</bp>
 		<goal>3</goal>
@@ -9,9 +9,17 @@
 		<ssleep>5</ssleep>
 	</item>
 	<item>
-		<date>20151203</date>
+		<date>20151102</date>
 		<hr>110</hr>
 		<bp>100</bp>
+		<goal>3.5</goal>
+		<dsleep>2</dsleep>
+		<ssleep>6</ssleep>
+	</item>
+		<item>
+		<date>20151102</date>
+		<hr>105</hr>
+		<bp>101</bp>
 		<goal>3.5</goal>
 		<dsleep>2</dsleep>
 		<ssleep>6</ssleep>

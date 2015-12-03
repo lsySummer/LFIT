@@ -27,20 +27,20 @@
 					活动管理
 				</li>
 				<li  class="active">
-					<a href="../manager/activityManage.html" target="frame4" style="color:#7fa731">修改活动 </a>
+					<a href="../manager/activityManage.php" target="frame4" style="color:#7fa731">修改活动 </a>
 				</li>
 				<li>
-					<a href="../manager/allActivity.html" target="frame4" style="color:#7fa731">全部活动</a>
+					<a href="../manager/allActivity.php" target="frame4" style="color:#7fa731">全部活动</a>
 				</li>
 				
 				<li class="nav-header" style="font-weight:bold">
 					兴趣组管理
 				</li>
 				<li>
-					<a href="../manager/allInterest.html" target="frame4"  style="color:#7fa731">全部兴趣组</a>
+					<a href="../manager/allInterest.php" target="frame4"  style="color:#7fa731">全部兴趣组</a>
 				</li>
 				<li>
-					<a href="../manager/pushInterest.html" target="frame4"  style="color:#7fa731">推送</a>
+					<a href="../manager/pushInterest.php" target="frame4"  style="color:#7fa731">推送</a>
 				</li>
 				<li class="divider">
 				</li>
@@ -49,10 +49,10 @@
 					系统管理
 				</li>
 				<li>
-					<a href="../manager/complain.html"  target="frame4" style="color:#7fa731">投诉处理</a>
+					<a href="../manager/complain.php"  target="frame4" style="color:#7fa731">投诉处理</a>
 				</li>
 				<li>
-					<a href="../manager/exerciseSta.html"  target="frame4" style="color:#7fa731">用户数量</a>
+					<a href="../manager/exerciseSta.php"  target="frame4" style="color:#7fa731">用户数量</a>
 				</li>
 				<li class="divider">
 				</li>

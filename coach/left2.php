@@ -8,10 +8,7 @@
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
 
 	
-	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/mycss/mycss.css" rel="stylesheet">
-    <script src="/scripts/jquery.min.js"></script>
-
 	
    </head>
    <body>
@@ -21,28 +18,28 @@
 		<div class="span12"  style="background-color:#f7f7f7">
 			<ul class="nav nav-list">
 			<li class="nav-header" style="font-weight:bold;text-align:right">
-					 <span class="label" style="background-color:#999999;margin-top:40px">普通用户</span>
+					 <span class="label" style="background-color:#999999;margin-top:40px">教练</span>
 				</li>
 				<li class="nav-header" style="font-weight:bold">
 					运动管理
 				</li>
 				<li class="active">
-					<a href="../common/healthToday.php" target="frame4" style="color:#7fa731">今日健康</a>
+					<a href="../common/healthTodayDC.php" target="frame4" style="color:#7fa731">今日健康</a>
 				</li>
 				<li>
-					<a href="../common/exerciseSta.html" target="frame4" style="color:#7fa731">历史统计</a>
+					<a href="../common/exerciseSta.php" target="frame4" style="color:#7fa731">历史统计</a>
 				</li>
 				<li>
-					<a href="../person/feedback.html" target="frame4" style="color:#7fa731">查看反馈</a>
+					<a href="../common/giveFeed.php" target="frame4" style="color:#7fa731">反馈建议</a>
 				</li>
 				<li class="nav-header" style="font-weight:bold">
 					活动管理
 				</li>
 				<li>
-					<a href="../common/myActivity.html" target="frame4"  style="color:#7fa731">我的活动</a>
+					<a href="../common/myActivity.php" target="frame4"  style="color:#7fa731">我的活动</a>
 				</li>
 				<li>
-					<a href="../common/allActivity.html" target="frame4" style="color:#7fa731">全部活动</a>
+					<a href="../common/allActivity.php" target="frame4" style="color:#7fa731">全部活动</a>
 				</li>
 				<li class="divider">
 				</li>
@@ -51,21 +48,19 @@
 					兴趣组管理
 				</li>
 				<li>
-					<a href="../common/myInterest.html"  target="frame4" style="color:#7fa731">我的兴趣组</a>
+					<a href="../common/myInterest.php"  target="frame4" style="color:#7fa731">我的兴趣组</a>
 				</li>
 				<li>
-					<a href="../common/allInterest.html"  target="frame4" style="color:#7fa731">全部兴趣组</a>
+					<a href="../common/allInterest.php"  target="frame4" style="color:#7fa731">全部兴趣组</a>
 				</li>
 				<li class="divider">
+				</li>
 				</li>
 					<li class="nav-header" style="font-weight:bold">
 					交流
 				</li>
 				<li>
-					<a href="Complain.html"  target="frame4" style="color:#7fa731">投诉</a>
-				</li>
-				<li>
-					<a href="../common/news.html"  target="frame4" style="color:#7fa731">消息</a>
+					<a href="../coach/news.php"  target="frame4" style="color:#7fa731">消息</a>
 				</li>
 				
 			</ul>
@@ -75,6 +70,6 @@
 
 	  
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="../js/bootstrap.js"></script>
+	<script src="js/bootstrap.js"></script>
 	</body>
 </html>

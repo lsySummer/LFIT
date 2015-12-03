@@ -8,7 +8,10 @@
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
 
 	
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/mycss/mycss.css" rel="stylesheet">
+    <script src="/scripts/jquery.min.js"></script>
+
 	
    </head>
    <body>
@@ -18,19 +21,19 @@
 		<div class="span12"  style="background-color:#f7f7f7">
 			<ul class="nav nav-list">
 			<li class="nav-header" style="font-weight:bold;text-align:right">
-					 <span class="label" style="background-color:#999999;margin-top:40px">教练</span>
+					 <span class="label" style="background-color:#999999;margin-top:40px">普通用户</span>
 				</li>
 				<li class="nav-header" style="font-weight:bold">
 					运动管理
 				</li>
 				<li class="active">
-					<a href="../common/healthTodayDC.html" target="frame4" style="color:#7fa731">今日健康</a>
+					<a href="../common/healthToday.php" target="frame4" style="color:#7fa731">今日健康</a>
 				</li>
 				<li>
-					<a href="../common/exerciseSta.html" target="frame4" style="color:#7fa731">历史统计</a>
+					<a href="../common/exerciseSta.php" target="frame4" style="color:#7fa731">最近七天</a>
 				</li>
 				<li>
-					<a href="../common/giveFeed.php" target="frame4" style="color:#7fa731">反馈建议</a>
+					<a href="../person/feedback.html" target="frame4" style="color:#7fa731">查看反馈</a>
 				</li>
 				<li class="nav-header" style="font-weight:bold">
 					活动管理
@@ -55,12 +58,14 @@
 				</li>
 				<li class="divider">
 				</li>
-				</li>
 					<li class="nav-header" style="font-weight:bold">
 					交流
 				</li>
 				<li>
-					<a href="../coach/news.html"  target="frame4" style="color:#7fa731">消息</a>
+					<a href="Complain.html"  target="frame4" style="color:#7fa731">投诉</a>
+				</li>
+				<li>
+					<a href="../common/news.html"  target="frame4" style="color:#7fa731">消息</a>
 				</li>
 				
 			</ul>
@@ -70,6 +75,6 @@
 
 	  
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="js/bootstrap.js"></script>
+	<script src="../js/bootstrap.js"></script>
 	</body>
 </html>

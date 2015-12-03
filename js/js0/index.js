@@ -209,18 +209,18 @@ function restart() {
 
 function reset() {
   chart.populate([
-    { label: 'One', value: 0 },
-    { label: 'Two', value: 100 },
-    { label: 'Three', value: 200 },
-    { label: 'Four', value: 840 },
-    { label: 'Five', value: 620 },
-    { label: 'Six', value: 500 },
-    { label: 'Seven', value: 600 },
-    { label: 'Eight', value: 1100 },
-    { label: 'Nine', value: 800 },
-    { label: 'Ten', value: 900 },
-    { label: 'Eleven', value: 1200, future: true },
-    { label: 'Twelve', value: 1400, future: true }
+    { label: 'One', value: 100 },
+    { label: 'Two', value: 105 },
+    { label: 'Three', value: 120 },
+    { label: 'Four', value: 80 },
+    { label: 'Five', value: 110 },
+    { label: 'Six', value: 98 },
+    { label: 'Seven', value: 115 },
+    { label: 'Eight', value: 100 },
+    { label: 'Nine', value: 103 },
+    { label: 'Ten', value: 95 },
+    { label: 'Eleven', value: 130, future: true },
+    { label: 'Twelve', value: 108, future: true }
   ]);
 }
 

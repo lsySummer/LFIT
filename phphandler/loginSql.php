@@ -1,4 +1,5 @@
-﻿<?php
+﻿<meta http-equiv="Content-Type" content="text/php; charset=utf-8">
+<?php
 //登录
 
 $username = htmlspecialchars($_POST['username']);
@@ -6,17 +7,19 @@ $password = htmlspecialchars($_POST['password']);
 
 $db = sqlite_open("../lfit.db",0666,$sqliteerror);
 //检测用户名及密码是否正确
-$sql="select * from userBasic where uname='$username' and upass='$password' limit 1";
+$sql="select * from userBasic where uname='$username' and upass='$password'";
 $res = sqlite_unbuffered_query($db,$sql);
 if($item = sqlite_fetch_array($res, SQLITE_ASSOC)){
 	$iden = $item["uidentity"];
 	$user_id = $item["uid"];
+	$user_name=$item["uname"];
 	session_start();
 	$_SESSION['gluid']=$user_id;
+	$_SESSION['gluname']=$user_name;
 
 	switch($iden){
 		case 0:
-			header("Location:../manager/frameManager.html");
+			header("Location:../manager/frameManager.php");
 			break;
 		case 1:
 			header("Location:../person/framePerson.php");
@@ -25,7 +28,7 @@ if($item = sqlite_fetch_array($res, SQLITE_ASSOC)){
 			header("Location:../doctor/frameDoctor.php");
 			break;
 		case 3:
-			header("Location:../coach/frameCoach.html");
+			header("Location:../coach/frameCoach.php");
 			break;
 	}
 	exit();

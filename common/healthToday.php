@@ -78,12 +78,13 @@ $(document).ready(function(){
 			 <div style="height:100px;width:440px;float:left;border-top:1px solid #abd241;border-left:8px solid #abd241;background-color:#">
 				
 					<dt style="font-size:16px;margin-left:10px;margin-top:1%">
-							最近健康状况<br/>
+							最近健康状况
 				<?php 
 					if(file_exists("../xmldata/$user_id.xml")){
 					$xml_array=simplexml_load_file("../xmldata/$user_id.xml");
 					foreach($xml_array as $tmp){
-						echo "心率" .$tmp->hr."<br>".  "血压" .$tmp->bp ."<br>";
+						echo "<br>";
+						echo "心率" .$tmp->hr."<br>".  "血压" .$tmp->bph ."/".$tmp->bpl."<br>";
 						$goaldone = $tmp->goal;
 						$dsleep = $tmp->dsleep;
 						$ssleep = $tmp->ssleep;
@@ -107,7 +108,7 @@ $(document).ready(function(){
 
 							<?php
 								$db = sqlite_open("../lfit.db",0666,$sqliteerror);
-								$checksql = "select * from dfeedback where uid=$user_id order by udate desc limit 0,1";
+								$checksql = "select * from dfeedback where uid='$user_id' order by udate desc limit 0,1";
 								$res = sqlite_unbuffered_query($db,$checksql);
 								if($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
 								$did = $item["did"];
@@ -136,7 +137,7 @@ $(document).ready(function(){
 					<caption>每日运动目标：
 					<?php
 		$db = sqlite_open("../lfit.db",0666,$sqliteerror);
-		$checksql = "select ugoal from userBasic where uid=$user_id";
+		$checksql = "select ugoal from userBasic where uid='$user_id'";
 		$res = sqlite_unbuffered_query($db,$checksql);
 		if($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
 			$ugoal = $item["ugoal"];
