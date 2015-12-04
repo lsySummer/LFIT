@@ -1,0 +1,57 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<script src="jquery/jquery-1.8.3.min.js"></script>
+<style type="text/css">
+body.modal-open,
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+margin-right: 0;
+}
+.modal {
+top: 100px;
+bottom: auto;
+padding: 0;
+background-color: #ffffff;
+border: 1px solid #999999;
+border: 1px solid rgba(0, 0, 0, 0.2);
+border-radius: 6px;
+-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+background-clip: padding-box;
+}
+.modal.container {
+max-width: none;
+}
+</style>
+<script type="text/javascript">
+$(function() {
+$('.content').on("click", "button", function () {
+$('#full-width .modal-header .modal-title').empty().text($(this).text());
+$('#full-width').modal();
+});
+});
+</script>
+</head>
+<body>
+<div class="content" style="margin-left: 100px;margin-top: 100px;">
+<button class="btn btn-primary btn-lg">打开模态窗口1</button>
+<button class="btn btn-primary btn-lg">打开模态窗口2</button>
+</div>
+<div id="full-width" class="modal container fade" tabindex="-1" style="display: none;">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title">标题</h4>
+</div>
+<div class="modal-body">
+<p>
+主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容主体内容
+</p>
+</div>
+<div class="modal-footer" style="text-align: center;">
+<button type="button" data-dismiss="modal" class="btn btn-default">关闭</button>
+</div>
+</div>
+</body>

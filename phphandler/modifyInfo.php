@@ -3,7 +3,7 @@
 $sexOption = $_POST['sexOption'];
 $place = $_POST['placeSelect'];
 $goal = $_POST['goal'];
-$sport = $_POST['word'];
+$sport =  htmlspecialchars($_POST['word']);
 $date = $_POST['datePicker'];
 session_start();
 $user_id = $_SESSION['gluid'];

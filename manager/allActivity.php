@@ -11,34 +11,44 @@
 	
 	
     <link href="../css/mycss/mycss.css" rel="stylesheet">
- 
+  <script>
+
+ function setValue(aid){
+	var hid = document.getElementById('acId');
+	hid.value=aid;
+	 }
+ </script>
 	
 	</head>
 
 <body  style="background-image:url('../image/bg.png');background-size:cover; ">
-	
-	<div class="tabbable" id="tabs-592203">
-				<ul class="nav nav-tabs">
-					<li class="active">
-						<a href="#panel-374785" data-toggle="tab">进行中</a>
-					</li>
-					<li>
-						<a href="#panel-286187" data-toggle="tab">已结束</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="panel-374785">
-						<div class="activity">
-							<img class="acImg" src="../image/activity2.jpg"></img>
-							<p class="acP">时间：11月11日<br/>地点：宿舍<br/>双十一到了！快来买买买！</p>
-							<button class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">删除活动</button>
-						</div>
-						<div class="activity">
-							<img class="acImg" src="../image/activity2.jpg"></img>
-							<p class="acP">时间：11月11日<br/>地点：宿舍<br/>双十一到了！快来买买买！</p>
-							<button class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">删除活动</button>
-						</div>
-					</div>
+		<?php 
+	$db = sqlite_open("../lfit.db",0666,$sqliteerror);
+	$sql = "select * from activity";
+	$res = sqlite_unbuffered_query($db,$sql);
+	$arr = array();
+	$i=0;
+	while($item = sqlite_fetch_array($res, SQLITE_ASSOC)){
+		$aid = $item["aid"];
+		$arr[$i] = $aid;
+		$i++;
+		$atime = $item["atime"];
+		$place = $item["place"];
+		$info = $item["info"];
+		echo '<div class="activity" >
+			<img class="acImg" src="../image/activity2.jpg"></img>
+			<p class="acP">
+    		编号：'.$aid.'<br/>
+    		时间：'.$atime.'<br/>地点：'.$place.'<br/>详情：'.$info.'</p>
+			<button id='.$aid.' onclick="setValue('.$aid.')" class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">删除活动</button>
+	</div>
+		';
+	}
+	?>
+						
+	<form class="form-horizontal" id="formAction"
+		action="../phphandler/delAct.php" method="post">
+	<input type="hidden" value="" name="acId" id="acId">
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
 			   aria-labelledby="myModalLabel" aria-hidden="true">
 			   <div class="modal-dialog">
@@ -57,27 +67,14 @@
 							<button type="button" class="btn btn-default" 
 							   data-dismiss="modal">取消
 							</button>
-							<button type="button" class="btn btn-primary" data-dismiss="modal">
+							<button type="submit" class="btn btn-primary">
 							   确定
 							</button>
 						</div>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-fade -->
-					<div class="tab-pane" id="panel-286187">
-						<div class="activity">
-							<img class="acImg" src="../image/activity1.jpg"></img>
-							<p class="acP">时间：11月1日<br/>地点：鼓楼校区<br/>交完web作业，大家一起来跑步吧！</p>
-							<button class="btn btn-success btn-block">已结束</button>
-						</div>
-						<div class="activity">
-							<img class="acImg" src="../image/activity1.jpg"></img>
-							<p class="acP">时间：11月1日<br/>地点：鼓楼校区<br/>交完web作业，大家一起来跑步吧！</p>
-							<button class="btn btn-success btn-block">已结束</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			</form>
 		  
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="../js/bootstrap.js"></script>
