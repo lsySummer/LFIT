@@ -1,19 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <abc>
 	<item>
-		<date>20151201</date>
-		<hr>100</hr>
-		<bp>90</bp>
-		<goal>3</goal>
-		<dsleep>3</dsleep>
-		<ssleep>5</ssleep>
-	</item>
-	<item>
-		<date>20151203</date>
-		<hr>110</hr>
-		<bp>100</bp>
-		<goal>3.5</goal>
-		<dsleep>2</dsleep>
+		<hr>88</hr>
+		<bph>95</bph>
+		<bpl>70</bpl>
+		<goal>2</goal>
+		<dsleep>5</dsleep>
 		<ssleep>6</ssleep>
+	</item>	
+	<item>
+		<hr>88</hr>
+		<bph>117</bph>
+		<bpl>75</bpl>
+		<goal>2</goal>
+		<dsleep>1</dsleep>
+		<ssleep>4</ssleep>
+	</item>	
+	<item>
+		<hr>82</hr>
+		<bph>97</bph>
+		<bpl>68</bpl>
+		<goal>7</goal>
+		<dsleep>1</dsleep>
+		<ssleep>6</ssleep>
+	</item>	
+	<item>
+		<hr>117</hr>
+		<bph>94</bph>
+		<bpl>85</bpl>
+		<goal>4</goal>
+		<dsleep>3</dsleep>
+		<ssleep>6</ssleep>
+	</item>	<item>
+		<hr>119</hr>
+		<bph>96</bph>
+		<bpl>83</bpl>
+		<goal>2</goal>
+		<dsleep>1</dsleep>
+		<ssleep>6</ssleep>
+	</item>	
+	<item>
+		<hr>104</hr>
+		<bph>91</bph>
+		<bpl>65</bpl>
+		<goal>9</goal>
+		<dsleep>5</dsleep>
+		<ssleep>3</ssleep>
+	</item>	
+	<item>
+		<hr>97</hr>
+		<bph>105</bph>
+		<bpl>62</bpl>
+		<goal>2</goal>
+		<dsleep>1</dsleep>
+		<ssleep>5</ssleep>
+	</item>	
+	<item>
+		<hr>88</hr>
+		<bph>115</bph>
+		<bpl>77</bpl>
+		<goal>2</goal>
+		<dsleep>1</dsleep>
+		<ssleep>6</ssleep>
+	</item>	
+	<item>
+		<hr>96</hr>
+		<bph>120</bph>
+		<bpl>61</bpl>
+		<goal>1</goal>
+		<dsleep>3</dsleep>
+		<ssleep>4</ssleep>
 	</item>
 </abc>

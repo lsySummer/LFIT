@@ -1,45 +1,40 @@
+﻿	<!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/php; charset=utf-8">
-<body>
- <?php 
- $a=30;
- ?>
+   <head>
+     
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 
+	<link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
 
-<script type="text/javascript">
- var a = <?php echo $a;?>;
- window.alert(a);
 
-</script>
-</body>
-</html>
+    <link href="../css/mycss/mycss.css" rel="stylesheet">
 
- for(var i=0;i<7;i++){
-	a[i] = <?php echo $goalarr[i];?>;
-	}
-<form action="../filehandler/todayData.php" method="post"
-					enctype="multipart/form-data">
-					<input type="file" name="file" id="fileField" size="20"
-						style="float: left; margin-top: 1%" /> <input type="submit"
-						class="btn-sm btn-default" name="submit" value="上传"
-						style="float: left" />
-				</form>
-				
-				<div id="myAlert" class="alert alert-success">
-			<a href="#" class="close" data-dismiss="alert">&times;</a> <strong>提示！</strong>您有新的未读消息！
-		</div>
-		
-			 <span class="label" style="background-color:#999999;margin-top:40px;margin-left:700px">
-							<?php echo $date?></span>
-						 <span class="label" style="background-color:#999999;">
-							<?php echo "doctor ".$dname?></span>
-							
-							
-							
-							
-							
-											<div style="border-left:8px solid #abd241;width:880px;border-top:1px solid #abd241;margin-top:30px">
+	
+   </head>
+   <body style="background-image:url('../image/bg.png');background-size:cover; ">
+
+	
+	<div class="tabbable" id="tabs-112430">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-168923" data-toggle="tab">来及医生</a>
+					</li>
+					<li>
+						<a href="#panel-564688" data-toggle="tab">来自教练</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-168923" style="height:180px;width:880px">
+					
+						<div id="myAlert" class="alert alert-warning">
+						   <a href="#" class="close" data-dismiss="alert">&times;</a>
+						   <strong>提示！</strong>您有新的未读消息！
+						</div>
+						
+		<div style="border-left:8px solid #abd241;width:880px;border-top:1px solid #abd241;margin-top:30px">
 						<p style="margin-top:10px;font-size:15px">
-							<?php
+								<?php
 								session_start();
 								$user_name = $_SESSION['gluname'];
 								$db = sqlite_open("../lfit.db",0666,$sqliteerror);
@@ -61,21 +56,21 @@
 								}
 							?>
 						</p>
-					
+					</div>
 					</div>
 					
 					<div class="tab-pane" id="panel-564688" style="height:480px;width:880px">
 						<div class="tab-pane active" id="panel-168923">
 							<div style="border-left:8px solid #abd241;width:880px;border-top:1px solid #abd241;margin-top:30px">
 							<p style="margin-top:10px;font-size:15px">
-							<?php
+									<?php
 								$db = sqlite_open("../lfit.db",0666,$sqliteerror);
 								$sql = "select * from cfeedback where uname='$user_name'";
 								$res = sqlite_unbuffered_query ( $db, $sql );
 								while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
 								$info=$item["info"];
 								$date=$item["udate"];
-								$dname=$item["cname"];
+								$cname=$item["cname"];
 								$color="#000000";
 								$size="3";
 								echo "<font color=".$color." size=".$size.">";
@@ -88,7 +83,20 @@
 								}
 							?>
 							</p>
+							</div>
 					</div>
 					</div>
 				</div>
 			</div>
+			<script type="text/javascript">
+				$(function(){
+				   $(".close").click(function(){
+					  $("#myAlert").alert('close');
+				   });
+				});  
+
+				</script>   
+			<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	</body>
+</html>

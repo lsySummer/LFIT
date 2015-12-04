@@ -51,6 +51,7 @@
 <?php 
 	session_start();
 	$user_id = $_SESSION['gluid'];
+	$user_name = $_SESSION['gluname'];
 ?>
 
 <script type="text/javascript">
@@ -108,7 +109,7 @@ $(document).ready(function(){
 
 							<?php
 								$db = sqlite_open("../lfit.db",0666,$sqliteerror);
-								$checksql = "select * from dfeedback where uid='$user_id' order by udate desc limit 0,1";
+								$checksql = "select * from dfeedback where uname='$user_name' order by udate desc limit 0,1";
 								$res = sqlite_unbuffered_query($db,$checksql);
 								if($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
 								$did = $item["did"];

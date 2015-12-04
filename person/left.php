@@ -33,16 +33,16 @@
 					<a href="../common/exerciseSta.php" target="frame4" style="color:#7fa731">最近七天</a>
 				</li>
 				<li>
-					<a href="../person/feedback.html" target="frame4" style="color:#7fa731">查看反馈</a>
+					<a href="../person/feedback.php" target="frame4" style="color:#7fa731">查看反馈</a>
 				</li>
 				<li class="nav-header" style="font-weight:bold">
 					活动管理
 				</li>
 				<li>
-					<a href="../common/myActivity.html" target="frame4"  style="color:#7fa731">我的活动</a>
+					<a href="../common/myActivity.php" target="frame4"  style="color:#7fa731">我的活动</a>
 				</li>
 				<li>
-					<a href="../common/allActivity.html" target="frame4" style="color:#7fa731">全部活动</a>
+					<a href="../common/allActivity.php" target="frame4" style="color:#7fa731">全部活动</a>
 				</li>
 				<li class="divider">
 				</li>
@@ -51,10 +51,10 @@
 					兴趣组管理
 				</li>
 				<li>
-					<a href="../common/myInterest.html"  target="frame4" style="color:#7fa731">我的兴趣组</a>
+					<a href="../common/myInterest.php"  target="frame4" style="color:#7fa731">我的兴趣组</a>
 				</li>
 				<li>
-					<a href="../common/allInterest.html"  target="frame4" style="color:#7fa731">全部兴趣组</a>
+					<a href="../common/allInterest.php"  target="frame4" style="color:#7fa731">全部兴趣组</a>
 				</li>
 				<li class="divider">
 				</li>
@@ -62,10 +62,10 @@
 					交流
 				</li>
 				<li>
-					<a href="Complain.html"  target="frame4" style="color:#7fa731">投诉</a>
+					<a href="Complain.php"  target="frame4" style="color:#7fa731">投诉</a>
 				</li>
 				<li>
-					<a href="../common/news.html"  target="frame4" style="color:#7fa731">消息</a>
+					<a href="../common/news.php"  target="frame4" style="color:#7fa731">消息</a>
 				</li>
 				
 			</ul>

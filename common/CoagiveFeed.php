@@ -1,9 +1,9 @@
-﻿
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>个人管理界面</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 
 <link href="../css/bootstrap.css" rel="stylesheet">
 <link href="../css/bootstrap-responsive.css" rel="stylesheet">
@@ -33,8 +33,9 @@
 				<?php
 				session_start ();
 				$user_id = $_SESSION ['gluid'];
+				$user_name = $_SESSION ['gluname'];
 				$db = sqlite_open ( "../lfit.db", 0666, $sqliteerror );
-				$sql = "select uid,uname from userBasic where udocid='$user_id'";
+				$sql = "select uid,uname from userBasic where ucoaid='$user_id'";
 				$res = sqlite_unbuffered_query ( $db, $sql );
 				$uidarr = array ();
 				$unamearr = array();
@@ -86,7 +87,7 @@
 				}
 				?>
 			</p>
-			<form action="../filehandler/feedback.php" method="post"
+			<form action="../filehandler/cfeedback.php" method="post"
 					enctype="multipart/form-data">
 			<select class="selectpicker" style="height:25px;margin-left:1%" name="placeSelect" id="selectUser">
 				<option value="-1">toAll</option>

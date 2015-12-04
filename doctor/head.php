@@ -20,7 +20,13 @@
 	
 			<div style="float:left;margin-top:0.1%;margin-left:1%;">
 			 <a href="../doctor/frameDoctor2.php" target="frame2" class="healthfont">首页</a>
-			 <a href="../common/info.php" target="frame2" class="healthfont" data-toggle="tooltip" data-placement="bottom" title="您当前的全国排名为第50位">用户名 <span class="badge">V50</span></a>
+			 <a href="../common/info.php" target="frame2" class="healthfont" data-toggle="tooltip" data-placement="bottom" title="您当前的全国排名为第50位">
+			  <?php
+			 session_start();
+			 $user_name = $_SESSION['gluname'];
+			 echo $user_name;
+			 ?> 
+			 <span class="badge">V50</span></a>
 			<img src="../image/logo.png" style="margin-right:80px"></img>
 			 
 		</div>

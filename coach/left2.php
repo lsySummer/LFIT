@@ -24,13 +24,13 @@
 					运动管理
 				</li>
 				<li class="active">
-					<a href="../common/healthTodayDC.php" target="frame4" style="color:#7fa731">今日健康</a>
+					<a href="../common/healthToday.php" target="frame4" style="color:#7fa731">今日健康</a>
 				</li>
 				<li>
 					<a href="../common/exerciseSta.php" target="frame4" style="color:#7fa731">历史统计</a>
 				</li>
 				<li>
-					<a href="../common/giveFeed.php" target="frame4" style="color:#7fa731">反馈建议</a>
+					<a href="../common/CoagiveFeed.php" target="frame4" style="color:#7fa731">反馈建议</a>
 				</li>
 				<li class="nav-header" style="font-weight:bold">
 					活动管理

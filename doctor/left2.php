@@ -24,10 +24,10 @@
 					运动管理
 				</li>
 				<li class="active">
-					<a href="../common/healthTodayDC.html" target="frame4" style="color:#7fa731">今日健康</a>
+					<a href="../common/healthToday.php" target="frame4" style="color:#7fa731">今日健康</a>
 				</li>
 				<li>
-					<a href="../common/exerciseSta.html" target="frame4" style="color:#7fa731">历史统计</a>
+					<a href="../common/exerciseSta.php" target="frame4" style="color:#7fa731">历史统计</a>
 				</li>
 				<li>
 					<a href="../common/giveFeed.php" target="frame4" style="color:#7fa731">反馈建议</a>
@@ -36,10 +36,10 @@
 					活动管理
 				</li>
 				<li>
-					<a href="../common/myActivity.html" target="frame4"  style="color:#7fa731">我的活动</a>
+					<a href="../common/myActivity.php" target="frame4"  style="color:#7fa731">我的活动</a>
 				</li>
 				<li>
-					<a href="../common/allActivity.html" target="frame4" style="color:#7fa731">全部活动</a>
+					<a href="../common/allActivity.php" target="frame4" style="color:#7fa731">全部活动</a>
 				</li>
 				<li class="divider">
 				</li>
@@ -48,10 +48,10 @@
 					兴趣组管理
 				</li>
 				<li>
-					<a href="../common/myInterest.html"  target="frame4" style="color:#7fa731">我的兴趣组</a>
+					<a href="../common/myInterest.php"  target="frame4" style="color:#7fa731">我的兴趣组</a>
 				</li>
 				<li>
-					<a href="../common/allInterest.html"  target="frame4" style="color:#7fa731">全部兴趣组</a>
+					<a href="../common/allInterest.php"  target="frame4" style="color:#7fa731">全部兴趣组</a>
 				</li>
 				<li class="divider">
 				</li>
@@ -59,7 +59,7 @@
 					交流
 				</li>
 				<li>
-					<a href="../doctor/news.html"  target="frame4" style="color:#7fa731">消息</a>
+					<a href="../doctor/news.php"  target="frame4" style="color:#7fa731">消息</a>
 				</li>
 				
 			</ul>
