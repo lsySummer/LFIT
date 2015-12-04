@@ -54,6 +54,26 @@
 								echo "<br/>";
 								echo "</font>";
 								}
+								$sql = "select * from excelurl where uname='$user_name'";
+								$res = sqlite_unbuffered_query ( $db, $sql );
+								error_reporting(E_ALL ^ E_NOTICE);
+								require_once 'excel_reader2.php';
+								while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
+									$url=$item["url"];
+									$date=$item["udate"];
+									$dname=$item["dname"];
+									$color="#000000";
+									$size="3";
+									echo "<font color=".$color." size=".$size.">";
+									$data = new Spreadsheet_Excel_Reader($url);
+									$data->setOutputEncoding('UTF-8');
+									echo $data->dump(true,true);
+									echo "<br/>";
+									echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$date."   "."from doctor".$dname."<br/>";
+									echo "<br/>";
+									echo "<br/>";
+									echo "</font>";
+								}
 							?>
 						</p>
 					</div>
@@ -80,6 +100,26 @@
 								echo "<br/>";
 								echo "<br/>";
 								echo "</font>";
+								}
+								$sql = "select * from cexcelurl where uname='$user_name'";
+								$res = sqlite_unbuffered_query ( $db, $sql );
+								error_reporting(E_ALL ^ E_NOTICE);
+								require_once 'excel_reader2.php';
+								while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
+									$url=$item["url"];
+									$date=$item["udate"];
+									$dname=$item["cname"];
+									$color="#000000";
+									$size="3";
+									echo "<font color=".$color." size=".$size.">";
+									$data = new Spreadsheet_Excel_Reader($url);
+									$data->setOutputEncoding('UTF-8');
+									echo $data->dump(true,true);
+									echo "<br/>";
+									echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$date."   "."from coach".$dname."<br/>";
+									echo "<br/>";
+									echo "<br/>";
+									echo "</font>";
 								}
 							?>
 							</p>

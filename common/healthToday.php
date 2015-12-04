@@ -112,14 +112,9 @@ $(document).ready(function(){
 								$checksql = "select * from dfeedback where uname='$user_name' order by udate desc limit 0,1";
 								$res = sqlite_unbuffered_query($db,$checksql);
 								if($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
-								$did = $item["did"];
+								$dname = $item["dname"];
 								$info = $item["info"];
-								$sql = "select uname from userBasic where uid='$did'";
-								$res = sqlite_unbuffered_query($db,$sql);
-								if($item2 = sqlite_fetch_array($res, SQLITE_ASSOC)) {
-									$dname = $item2["uname"];
 									echo $info ."<br/>"."&nbsp from doctor " .$dname;
-									}
 								}else{
 									echo "暂无医生的建议！";
 								}

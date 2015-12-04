@@ -42,7 +42,13 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // sqlite_query($db,"create table unews(unid integer primary key,
 // 		udate date not null,info text not null
 // 		);");
-
+// 	sqlite_query($db,"drop table excelurl");
+	sqlite_query($db,"create table excelurl(uname varchar(20) not null,dname varchar(20) not null,
+			udate date not null,url text
+			);");
+// 	sqlite_query($db,"create table cexcelurl(uname varchar(20) not null,cname varchar(20) not null,
+// 			udate date not null,url text
+// 			);");
   
   
 //显示结果
@@ -55,8 +61,8 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // SELECT语句
 //INSERT语句
 
-$sql = "insert into userBasic values(0, '0','0',0,5,2,3,'2015-11-30','..',0,'2015-11-12','Nanjing','Come on!')";
-$res = sqlite_query($db, $sql);
+// $sql = "insert into userBasic values(0, '0','0',0,5,2,3,'2015-11-30','..',0,'2015-11-12','Nanjing','Come on!')";
+// $res = sqlite_query($db, $sql);
 
 
 // $sql = "insert into userBasic values(null, '1','1',1,5,2,3,'2015-11-30')";
