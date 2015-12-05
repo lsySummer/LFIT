@@ -23,7 +23,7 @@
 
 </head>
 <body
-	style="background-image: url('../image/bg.png'); background-size: cover;">
+	style="background-image: url(''); background-size: cover;">
 	<div style="width: 880px; height: 450px;">
 		
 		<div

@@ -102,11 +102,11 @@
 				echo '<span style="font-size:20px">暂无推送信息！</span>'; ;
 			}
 			else{
+			$isNull=true;
 			foreach($inidarr as $inid){
 			$todayData=date("Y-m-d");
 			$sql = "select * from upush where iid='$inid' and udate='$todayData'";
 			$res = sqlite_unbuffered_query ( $db, $sql );
-			$isNull=true;
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
 				$isNull=false;
 				$iid=$item["iid"];

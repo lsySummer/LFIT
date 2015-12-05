@@ -51,10 +51,10 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // 	sqlite_query($db,"create table cexcelurl(uname varchar(20) not null,cname varchar(20) not null,
 // 			udate date not null,url text
 // 			);");
-sqlite_query($db,"drop table upush");
-	sqlite_query($db,"create table upush(upid integer primary key,
-		iid int not null,info text not null,img text,udate date
-		);");
+// sqlite_query($db,"drop table upush");
+// 	sqlite_query($db,"create table upush(upid integer primary key,
+// 		iid int not null,info text not null,img text,udate date
+// 		);");
   
 //显示结果
 // while ($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
@@ -66,8 +66,12 @@ sqlite_query($db,"drop table upush");
 // SELECT语句
 //INSERT语句
 
-// $sql = "insert into userBasic values(0, '0','0',0,5,2,3,'2015-11-30','..',0,'2015-11-12','Nanjing','Come on!')";
-// $res = sqlite_query($db, $sql);
+$sql = "insert into userBasic values(null, 'q','a',0,5,2,3,'2015-12-01','..',0,'2015-11-12','Nanjing','Come on!')";
+$res = sqlite_query($db, $sql);
+$sql = "insert into userBasic values(null, 'w','a',0,5,2,3,'2015-12-01','..',0,'2015-11-12','Nanjing','Come on!')";
+$res = sqlite_query($db, $sql);
+$sql = "insert into userBasic values(null, 'e','a',0,5,2,3,'2015-12-01','..',0,'2015-11-12','Nanjing','Come on!')";
+$res = sqlite_query($db, $sql);
 
 
 // $sql = "insert into userBasic values(null, '1','1',1,5,2,3,'2015-11-30')";
