@@ -22,6 +22,7 @@
 	</head>
 
 <body  style="background-image:url('../image/bg.png');background-size:cover; ">
+
 		<?php 
 	$db = sqlite_open("../lfit.db",0666,$sqliteerror);
 	$sql = "select * from activity";

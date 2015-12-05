@@ -17,8 +17,11 @@
 	function openJoin(e){
 		window.confirm(e);
 	}
-	
-	
+
+	 function setValue(aid){
+			var hid = document.getElementById('acId');
+			hid.value=aid;
+	 }
 	</script>
 </head>
 
@@ -86,20 +89,38 @@
 		</div>
 		<!--slide end-->
 		
-		<div style="width:880px;height:220px;background-color:white">
-			<div class="activity">
-				<img class="acImg" src="../image/activity1.jpg"></img>
-				<p class="acP">时间：11月1日<br/>地点：鼓楼校区<br/>交完web作业，大家一起来跑步吧！</p>
-				<button class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">我要加入</button>
-			<!-- 
-				 <button class="btn btn-block btn-success" type="button" onclick="openJoin('确定要加入该活动？')" style="margin-bottom:10px">我要加入</button>
-				 <button class="btn btn-block btn-success" type="button" style="margin-bottom:10px" onclick="openJoin('确定要加入该活动？')">我要加入</button>
-			-->
-			
-			
+		<div style="width:880px;background-color:white">
+			<?php 
+	$db = sqlite_open("../lfit.db",0666,$sqliteerror);
+	$sql = "select * from activity";
+	$res = sqlite_unbuffered_query($db,$sql);
+	$arr = array();
+	$i=0;
+	while($item = sqlite_fetch_array($res, SQLITE_ASSOC)){
+		$aid = $item["aid"];
+		$arr[$i] = $aid;
+		$i++;
+		$atime = $item["atime"];
+		$place = $item["place"];
+		$info = $item["info"];
+		echo '<div class="activity" >
+			<img class="acImg" src="../image/activity2.jpg"></img>
+			<p class="acP">
+    		编号：'.$aid.'<br/>
+    		时间：'.$atime.'<br/>地点：'.$place.'<br/>详情：'.$info.'</p>
+			<button id='.$aid.' onclick="setValue('.$aid.')" class="btn btn-primary btn-success btn-block" data-toggle="modal" 
+		data-target="#myModal">我要加入</button>
+	</div>
+		';
+	}
+	?>
+						
+			<form class="form-horizontal" id="formAction"
+		action="../phphandler/joinAct.php" method="post">
 			<!-- 模态框（Modal） -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
 			   aria-labelledby="myModalLabel" aria-hidden="true">
+			   <input type="hidden" value="" name="acId" id="acId">
 			   <div class="modal-dialog">
 				    <div class="modal-content">
 						<div class="modal-header">
@@ -116,20 +137,16 @@
 							<button type="button" class="btn btn-default" 
 							   data-dismiss="modal">取消
 							</button>
-							<button type="button" class="btn btn-primary" data-dismiss="modal">
+							<button type="submit" class="btn btn-primary" >
 							   确定
 							</button>
 						</div>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-fade -->
+			</form>
 		</div>
-			<div class="activity">
-			<img class="acImg" src="../image/activity2.jpg"></img>
-				<p class="acP">时间：11月11日<br/>地点：宿舍<br/>双十一到了！快来买买买！</p>
-			<button class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">我要加入</button>
-			</div>
-		</div>
+		
 	
 
 	  

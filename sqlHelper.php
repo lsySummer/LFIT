@@ -24,10 +24,11 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // 		uname varchar(20),cname varchar(20) not null,udate date not null,
 // 		info text
 // 		);");
+// sqlite_query($db,"drop table uactivity");
 // sqlite_query($db,"create table uactivity(uaid integer primary key,
 // 		uid int(11) not null,acid int(11) not null);");
-sqlite_query($db,"create table uinterest(uiid integer primary key,
-		uid int(11) not null,inid int(11) not null);");
+// sqlite_query($db,"create table uinterest(uiid integer primary key,
+// 		uid int(11) not null,inid int(11) not null);");
 // 	sqlite_query($db,"drop table activity");
 // sqlite_query($db,"create table activity(aid integer primary key,
 // 		atime text not null,place text not null,info text not null
@@ -50,9 +51,9 @@ sqlite_query($db,"create table uinterest(uiid integer primary key,
 // 	sqlite_query($db,"create table cexcelurl(uname varchar(20) not null,cname varchar(20) not null,
 // 			udate date not null,url text
 // 			);");
-	sqlite_query($db,"create table upush(upid integer primary key,
-		iid int not null,info text not null,img text
-		);");
+// 	sqlite_query($db,"create table upush(upid integer primary key,
+// 		iid int not null,info text not null,img text
+// 		);");
   
 //显示结果
 // while ($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
@@ -91,6 +92,14 @@ sqlite_query($db,"create table uinterest(uiid integer primary key,
 	
 // 	print "<BR>";
 // };
+
+	$sql = "select * from activity where aid = 1";
+		$res = sqlite_unbuffered_query ( $db, $sql );
+		while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
+			$aid = $item ["aid"];
+			$time = $item ["atime"];
+			echo $time;
+		}
 print "over";
 sqlite_close($db);
   
