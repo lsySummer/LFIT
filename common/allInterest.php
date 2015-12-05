@@ -8,16 +8,20 @@
 	 
 	<link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
-	
+
 
     <link href="../css/mycss/mycss.css" rel="stylesheet">
 
+	
 	<script language="javascript" type="text/javascript">
 	function openJoin(e){
 		window.confirm(e);
 	}
-	
-	
+
+	 function setValue(aid){
+			var hid = document.getElementById('acId');
+			hid.value=aid;
+	 }
 	</script>
 </head>
 
@@ -85,51 +89,67 @@
 		</div>
 		<!--slide end-->
 		
-		<div style="width:880px;height:220px;background-color:white">
-			<div class="activity">
-				<img class="acImg" src="../image/activity1.jpg"></img>
-				<p class="acP">人数：100人<br/>地点：鼓楼校区<br/>跑步兴趣组！诚召对跑步感兴趣的你！</p>
-			
-			<button class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">我要加入</button>
-			
+		<div style="width:880px;background-color:white">
+			<?php 
+	$db = sqlite_open("../lfit.db",0666,$sqliteerror);
+	$sql = "select * from interest";
+	$res = sqlite_unbuffered_query($db,$sql);
+	$arr = array();
+	$i=0;
+// 	iid integer primary key,
+	// 	place text not null,info text not null
+	// 		,inum int(11) not null
+	while($item = sqlite_fetch_array($res, SQLITE_ASSOC)){
+		$aid = $item["iid"];
+		$arr[$i] = $aid;
+		$i++;
+		$atime = $item["inum"];
+		$place = $item["place"];
+		$info = $item["info"];
+		echo '<div class="activity" >
+			<img class="acImg" src="../image/activity2.jpg"></img>
+			<p class="acP">
+    		编号：'.$aid.'<br/>
+    		时间：'.$atime.'<br/>地点：'.$place.'<br/>详情：'.$info.'</p>
+			<button id='.$aid.' onclick="setValue('.$aid.')" class="btn btn-primary btn-success btn-block" data-toggle="modal" 
+		data-target="#myModal">我要加入</button>
+	</div>
+		';
+	}
+	?>
+						
+			<form class="form-horizontal" id="formAction"
+		action="../phphandler/joinInterest.php" method="post">
 			<!-- 模态框（Modal） -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
 			   aria-labelledby="myModalLabel" aria-hidden="true">
+			   <input type="hidden" value="" name="acId" id="acId">
 			   <div class="modal-dialog">
-				  <div class="modal-content">
-					 <div class="modal-header">
-						<button type="button" class="close" 
-						   data-dismiss="modal" aria-hidden="true">
-							  &times;
-						</button>
-					   
-					 </div>
-					 <div class="modal-body">
-						确定加入活动？
-					 </div>
-					 <div class="modal-footer">
-						<button type="button" class="btn btn-default" 
-						   data-dismiss="modal">取消
-						</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal">
-						   确定
-						</button>
-					 </div>
-				  </div><!-- /.modal-content -->
-				</div><!-- /.modal -->
-			</div>
-			<!--
-				 <button class="btn btn-block btn-success" type="button" onclick="openJoin('确定要加入该活动？')" style="margin-bottom:10px">我要加入</button>
-				 <button class="btn btn-block btn-success" type="button" style="margin-bottom:10px" onclick="openJoin('确定要加入该兴趣组？')">我要加入</button>
-			-->
-			
-			</div>
-			<div class="activity">
-			<img class="acImg" src="../image/activity2.jpg"></img>
-				<p class="acP">人数：8人<br/>地点：宿舍<br/>双十一到了！买买卖小分队出动！加入我们把！</p>
-			<button class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">我要加入</button>
-			</div>
+				    <div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" 
+							   data-dismiss="modal" aria-hidden="true">
+								  &times;
+							</button>
+						   
+						</div>
+						<div class="modal-body">
+							确定加入该兴趣组？
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" 
+							   data-dismiss="modal">取消
+							</button>
+							<button type="submit" class="btn btn-primary" >
+							   确定
+							</button>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-fade -->
+			</form>
 		</div>
+		
 	
 
 	  

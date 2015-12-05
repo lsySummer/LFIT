@@ -51,9 +51,10 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // 	sqlite_query($db,"create table cexcelurl(uname varchar(20) not null,cname varchar(20) not null,
 // 			udate date not null,url text
 // 			);");
-// 	sqlite_query($db,"create table upush(upid integer primary key,
-// 		iid int not null,info text not null,img text
-// 		);");
+sqlite_query($db,"drop table upush");
+	sqlite_query($db,"create table upush(upid integer primary key,
+		iid int not null,info text not null,img text,udate date
+		);");
   
 //显示结果
 // while ($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
@@ -93,13 +94,13 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // 	print "<BR>";
 // };
 
-	$sql = "select * from activity where aid = 1";
-		$res = sqlite_unbuffered_query ( $db, $sql );
-		while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
-			$aid = $item ["aid"];
-			$time = $item ["atime"];
-			echo $time;
-		}
+// 	$sql = "select * from activity where aid = 1";
+// 		$res = sqlite_unbuffered_query ( $db, $sql );
+// 		while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
+// 			$aid = $item ["aid"];
+// 			$time = $item ["atime"];
+// 			echo $time;
+// 		}
 print "over";
 sqlite_close($db);
   

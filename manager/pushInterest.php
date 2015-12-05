@@ -29,7 +29,8 @@ function check(){
 		var array = eval(arr);
 	    var fatherForm = document.getElementById("selectUser");
 	    for(var i=0;i<array.length;i++){
-	    var varItem = new Option(array[i],i+1);   //objItemText, objItemValue   
+	    arrs = array[i].split(' ');
+	    var varItem = new Option(array[i],arrs[0]);   //objItemText, objItemValue   
 	    fatherForm.options.add(varItem);     
 		   }
 		}
@@ -67,7 +68,6 @@ function check(){
 						style="margin: 5px 3px; float: left; text-align: left; float: left">
 						<select class="selectpicker" style="height: 25px; margin-left: 1%"
 							name="placeSelect" id="selectUser">
-							<option value="-1">toAll</option>
 						</select>
 						<script>
 					test(<?php echo json_encode($unamearr)?>);

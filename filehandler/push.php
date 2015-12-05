@@ -3,6 +3,7 @@
 $toGroup= $_POST ['placeSelect'];
 $info = $_POST ['info'];
 $db = sqlite_open ( "../lfit.db", 0666, $sqliteerror );
+$dateToday = date("Y-m-d");
 if ($_FILES["file"]["error"] > 0)
 {
 	echo "error!" . $_FILES["file"]["error"] . "<br />";
@@ -31,15 +32,14 @@ if ($toGroup == - 1) {
 	while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
 		$userTo=$item["iid"];
 		$url = "../filehandler/".$url;
-		$sql = "insert into upush values(null,'$userTo','$info','$url')";
+		$sql = "insert into upush values(null,'$userTo','$info','$url','$dateToday')";
 		sqlite_query($db,$sql);
 	}
 } else {
-		$sql = "insert into upush values(null,'$toGroup','$info','$url')";
+		$sql = "insert into upush values(null,'$toGroup','$info','$url','$dateToday')";
 		sqlite_query($db,$sql);
 }
-echo "<script language=javascript>alert('已成功发布！');
-history.go(-2);</script>";
+echo "<script language=javascript>alert('已成功发布！');</script>";
 exit();
 }
 ?>

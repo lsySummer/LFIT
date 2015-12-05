@@ -28,8 +28,8 @@
 			$user_id = $_SESSION ['gluid'];
 			$user_name = $_SESSION ['gluname'];
 			$db = sqlite_open ( "../lfit.db", 0666, $sqliteerror );
-			// sqlite_query($db,"create table uactivity(uaid integer primary key,
-			// uid int(11) not null,acid int(11) not null);");
+			// 		uid int(11) not null,inid int(11) not null);");
+			// 	sqlite_query($db,"drop table activity");
 			$sql = "select uaid,acid from uactivity where uid='$user_id'";
 			$res = sqlite_unbuffered_query ( $db, $sql );
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
