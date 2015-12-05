@@ -112,7 +112,6 @@
 				$iid=$item["iid"];
 				$info=$item["info"];
 				$url=$item["img"];
-				$url = "../filehandler/".$url;
 				$sql = "select place from interest where iid='$iid'";
 				$res1 = sqlite_unbuffered_query ( $db, $sql );
 				if ( $item1 = sqlite_fetch_array ( $res1, SQLITE_ASSOC ) ) {

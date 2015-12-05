@@ -38,11 +38,12 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // 	place text not null,info text not null
 // 		,inum int(11) not null
 // 		);");
-// sqlite_query($db,"create table complain(cid integer primary key,
-// 		uid int(11) not null,toid int(11) not null,info text not null,
-// 		img text
-// 		);");
-// sqlite_query($db,"create table unews(unid integer primary key,
+sqlite_query($db,"drop table complain");
+sqlite_query($db,"create table complain(cid integer primary key,
+		uid int(11) not null,toid int(11) not null,info text not null,
+		img text
+		);");
+// sqlite_query($db,"create table unews(unid integer primary key,uid int(11),
 // 		udate date not null,info text not null
 // 		);");
 // 	sqlite_query($db,"create table excelurl(uname varchar(20) not null,dname varchar(20) not null,
@@ -66,12 +67,6 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // SELECT语句
 //INSERT语句
 
-$sql = "insert into userBasic values(null, 'q','a',0,5,2,3,'2015-12-01','..',0,'2015-11-12','Nanjing','Come on!')";
-$res = sqlite_query($db, $sql);
-$sql = "insert into userBasic values(null, 'w','a',0,5,2,3,'2015-12-01','..',0,'2015-11-12','Nanjing','Come on!')";
-$res = sqlite_query($db, $sql);
-$sql = "insert into userBasic values(null, 'e','a',0,5,2,3,'2015-12-01','..',0,'2015-11-12','Nanjing','Come on!')";
-$res = sqlite_query($db, $sql);
 
 
 // $sql = "insert into userBasic values(null, '1','1',1,5,2,3,'2015-11-30')";

@@ -36,6 +36,7 @@ if ($toGroup == - 1) {
 		sqlite_query($db,$sql);
 	}
 } else {
+		$url = "../filehandler/".$url;
 		$sql = "insert into upush values(null,'$toGroup','$info','$url','$dateToday')";
 		sqlite_query($db,$sql);
 }
