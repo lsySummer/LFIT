@@ -96,7 +96,7 @@
 			</script>
 		<input type="text" size="20" name="upfile" id="upfile" style="border:1px dotted #ccc" readonly>  
 <input type="button" value="上传建议" class="a-upload" onclick="path.click()" style="border:1px solid #ccc;background:#fff">  
-<input type="file" id="path" style="display:none" onchange="upfile.value=this.value" name="file">
+<input type="file" id="path" multiple style="display:none" onchange="upfile.value=this.value" name="file[]">
 <input type="submit" class="a-upload">
 				</form>
 		</div>

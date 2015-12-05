@@ -24,6 +24,7 @@
 <body
 	style="background-image: url('../image/bg.png'); background-size: cover;">
 			<?php
+			error_reporting(E_ALL ^ E_NOTICE);
 			session_start ();
 			$user_id = $_SESSION ['gluid'];
 			$user_name = $_SESSION ['gluname'];
@@ -32,7 +33,9 @@
 			// 	sqlite_query($db,"drop table activity");
 			$sql = "select uaid,acid from uactivity where uid='$user_id'";
 			$res = sqlite_unbuffered_query ( $db, $sql );
+			$isNullarr=true;
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
+				$isNullarr=false;
 				$acid = $item ["acid"];
 				$uaid=$item["uaid"];
 				$sql = "select * from activity where aid = '$acid'";
@@ -51,6 +54,7 @@
 	</div>
 		';}
 			}
+			if($isNullarr){echo '<span style="font-size:20px">暂无活动信息！</span>'; };
 			?>
 			<form class="form-horizontal" id="formAction"
 		action="../phphandler/exitActi.php" method="post">
