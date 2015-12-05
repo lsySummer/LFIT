@@ -2,8 +2,8 @@
 <?php
 $acId =  htmlspecialchars($_POST['acId']);
 $db = sqlite_open("../lfit.db",0666,$sqliteerror);
-$sql="delete from activity where aid='$acId'";
+$sql="delete from interest where iid='$acId'";
 sqlite_query($db,$sql);
-header("Location:../manager/allActivity.php");
+header("Location:../manager/allInterest.php");
 exit();
 ?>

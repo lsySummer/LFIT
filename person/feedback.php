@@ -12,7 +12,7 @@
 
 	
    </head>
-   <body style="background-image:url('../image/bg.png');background-size:cover; ">
+   <body style="background-image:url('');background-size:cover; ">
 
 	
 	<div class="tabbable" id="tabs-112430">

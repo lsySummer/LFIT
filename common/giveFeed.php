@@ -18,7 +18,7 @@
 	    fatherForm.options.add(varItem);     
 		   }
 		}
-			</script>
+</script>
 
 
 </head>
