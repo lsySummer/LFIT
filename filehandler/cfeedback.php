@@ -33,12 +33,12 @@ $j = 0;
 for($j = 0; $j < $i; $j ++) {
 	if ($type [$j] == ".xls") {
 		if ($userTo == - 1) {
-			$sql = "select uname from userBasic where ucoaid='$user_id'";
+			$sql = "select uname from userBasic";
 			$res = sqlite_unbuffered_query ( $db, $sql );
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
-				$userTo = $item ["uname"];
+				$user_To = $item ["uname"];
 				$urls = "../filehandler/" . $url [$j];
-				$sql = "insert into cexcelurl values('$userTo','$user_name','$dateToday','$urls')";
+				$sql = "insert into cexcelurl values('$user_To','$user_name','$dateToday','$urls')";
 				sqlite_query ( $db, $sql );
 			}
 		} else {
@@ -56,7 +56,7 @@ for($j = 0; $j < $i; $j ++) {
 			$content .= fread ( $handle, 8080 );
 		}
 		if ($userTo == - 1) {
-			$sql = "select uname from userBasic where ucoaid='$user_id'";
+			$sql = "select uname from userBasic";
 			$res = sqlite_unbuffered_query ( $db, $sql );
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
 				$user_To = $item ["uname"];
@@ -65,7 +65,7 @@ for($j = 0; $j < $i; $j ++) {
 			}
 		} else {
 
-			$sql = "insert into cfeedback values(null,'$user_To','$user_name','$dateToday','$content')";
+			$sql = "insert into cfeedback values(null,'$userTo','$user_name','$dateToday','$content')";
 			sqlite_query ( $db, $sql );
 			fclose ( $handle );
 		}

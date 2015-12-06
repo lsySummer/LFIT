@@ -45,10 +45,13 @@
 					$i ++;
 				}
 				$j=0;
-				foreach ( $uidarr as $user ) {
+				$k=0;
+				foreach ( $unamearr as $user ) {
 					$j++;
 					if (file_exists ( "../xmldata/$user.xml" )) {
-					echo "User " . $unamearr[$j].":<br/>";
+					echo "User " . $user.":<br/>";
+					$unamearrs[$k]= $user;
+					$k++;
 						$xml_array = simplexml_load_file ( "../xmldata/$user.xml" );
 						$i = 0;
 						foreach ( $xml_array as $tmp ) {
@@ -90,7 +93,7 @@
 				<option value="-1">toAll</option>
 				  </select>
 			<script>
-			test(<?php echo json_encode($unamearr)?>);
+			test(<?php echo json_encode($unamearrs)?>);
 			</script>
 		<input type="text" size="20" name="upfile" id="upfile" style="border:1px dotted #ccc" readonly>  
 <input type="button" value="上传建议" class="a-upload" onclick="path.click()" style="border:1px solid #ccc;background:#fff">  

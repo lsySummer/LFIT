@@ -81,8 +81,8 @@ $(document).ready(function(){
 					<dt style="font-size:16px;margin-left:10px;margin-top:1%">
 							最近健康状况
 				<?php 
-					if(file_exists("../xmldata/$user_id.xml")){
-					$xml_array=simplexml_load_file("../xmldata/$user_id.xml");
+					if(file_exists("../xmldata/$user_name.xml")){
+					$xml_array=simplexml_load_file("../xmldata/$user_name.xml");
 					foreach($xml_array as $tmp){
 						echo "<br>";
 						echo "心率" .$tmp->hr."<br>".  "血压" .$tmp->bph ."/".$tmp->bpl."<br>";

@@ -14,16 +14,16 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // sqlite_query($db,"create table dataHealth(did integer primary key,
 // 		uid int(11) not null,udate date not null,weight int(11) not null
 // 		,hr int(11) not null,bp int(11) not null);");
-sqlite_query($db,"drop table dfeedback");
-sqlite_query($db,"drop table cfeedback");
-sqlite_query($db,"create table dfeedback(dfid integer primary key,
-		uname varchar(20) not null,dname varchar(20) not null,udate date not null,
-		info text
-		);");
-sqlite_query($db,"create table cfeedback(cfid integer primary key,
-		uname varchar(20),cname varchar(20) not null,udate date not null,
-		info text
-		);");
+// sqlite_query($db,"drop table dfeedback");
+// sqlite_query($db,"drop table cfeedback");
+// sqlite_query($db,"create table dfeedback(dfid integer primary key,
+// 		uname varchar(20) not null,dname varchar(20) not null,udate date not null,
+// 		info text
+// 		);");
+// sqlite_query($db,"create table cfeedback(cfid integer primary key,
+// 		uname varchar(20),cname varchar(20) not null,udate date not null,
+// 		info text
+// 		);");
 // sqlite_query($db,"drop table uactivity");
 // sqlite_query($db,"create table uactivity(uaid integer primary key,
 // 		uid int(11) not null,acid int(11) not null);");
@@ -69,8 +69,11 @@ sqlite_query($db,"create table cfeedback(cfid integer primary key,
 
 
 
-// $sql = "insert into userBasic values(null, '1','1',1,5,2,3,'2015-11-30')";
-// $res = sqlite_query($db, $sql);
+$sql = "delete from userBasic where uname=1";
+$res = sqlite_query($db, $sql);
+
+$sql = "delete from userBasic where uname=user";
+$res = sqlite_query($db, $sql);
 
 // $sql = "insert into userBasic values(null, '2','2',2,5,2,3,'2015-11-30')";
 // $res = sqlite_query($db, $sql);

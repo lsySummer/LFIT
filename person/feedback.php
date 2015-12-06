@@ -27,10 +27,6 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="panel-168923" style="height:180px;width:880px">
 					
-						<div id="myAlert" class="alert alert-warning">
-						   <a href="#" class="close" data-dismiss="alert">&times;</a>
-						   <strong>提示！</strong>您有新的未读消息！
-						</div>
 						
 		<div style="border-left:8px solid #abd241;width:880px;border-top:1px solid #abd241;margin-top:30px">
 						<p style="margin-top:10px;font-size:15px">

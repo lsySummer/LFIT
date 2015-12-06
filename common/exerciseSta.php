@@ -22,8 +22,9 @@
 			$bparrl=array();
 		session_start();
 		$user_id = $_SESSION['gluid'];
-		if(file_exists("../xmldata/$user_id.xml")){
-			$xml_array=simplexml_load_file("../xmldata/$user_id.xml");
+		$user_name = $_SESSION['gluname'];
+		if(file_exists("../xmldata/$user_name.xml")){
+			$xml_array=simplexml_load_file("../xmldata/$user_name.xml");
 			$i=0;
 			foreach($xml_array as $tmp){
 				if($i==7){break;}

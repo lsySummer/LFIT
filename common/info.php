@@ -14,6 +14,7 @@
    $db = sqlite_open("../lfit.db",0666,$sqliteerror);
    $checksql = "select * from userBasic where uid ='$user_id'";
    $res = sqlite_unbuffered_query($db,$checksql);
+  	$dateToday = date("Y-m-d"); 
    if($item = sqlite_fetch_array($res, SQLITE_ASSOC)) {
    	$imgurl = $item["uimg"];
    	$user_name=$item["uname"];
@@ -21,6 +22,8 @@
    	$birth = $item["ubirth"];
    	$place = $item["uplace"];
    	$word = $item["uword"];
+   	$udate = $item["udate"];
+   	$minus=abs($dateToday-$udate)/86400;
    	echo "<script> var word = \"$word\";</script>";
    	echo "<script> var place = \"$place\";</script>";
    	echo "<script> var birth = \"$birth\";</script>";
@@ -104,8 +107,11 @@
 	</form>
 	<br/>
 	<div style="margin-top:10%;">
-	 <span class="label" style="background-color:#999999;margin-left:20%">健康管理<span>100</span>天</span>
-	 <span class="label" style="background-color:#999999;margin-top:10%;">累计运动量全国排名<span>50</span>位</span>
+	 <span class="label" style="background-color:#999999;margin-left:35%">健康管理<span>
+	 <?php 
+	 echo $minus;
+	 ?>
+	 </span>天</span>
 	</div>
 
 	</div>

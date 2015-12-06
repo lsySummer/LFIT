@@ -33,19 +33,22 @@ $j = 0;
 for($j = 0; $j < $i; $j ++) {
 	if ($type [$j] == ".xls") {
 		if ($userTo == - 1) {
-			$sql = "select uname from userBasic where udocid='$user_id'";
+			$sql = "select uname from userBasic";
 			$res = sqlite_unbuffered_query ( $db, $sql );
+// 			sqlite_query($db,"create table excelurl(uname varchar(20) not null,dname varchar(20) not null,
+// 			udate date not null,url text
+// 			);");
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
-				$userTo = $item ["uname"];
+				$user_To = $item ["uname"];
 				$urls = "../filehandler/" . $url [$j];
-				$sql = "insert into excelurl values('$userTo','$user_name','$dateToday','$urls')";
+				$sql = "insert into excelurl values('$user_To','$user_name','$dateToday','$urls')";
 				sqlite_query ( $db, $sql );
 			}
 		} else {
 			$urls = "../filehandler/" . $url [$j];
 			$sql = "insert into excelurl values('$userTo','$user_name','$dateToday','$urls')";
 			sqlite_query ( $db, $sql );
-			fclose ( $handle );
+// 			fclose ( $handle );
 		}
 		echo "<script language=javascript>alert(''.$j.'上传成功');</script>";
 		echo "已成功上传！";
@@ -56,17 +59,21 @@ for($j = 0; $j < $i; $j ++) {
 			$content .= fread ( $handle, 8080 );
 		}
 		if ($userTo == - 1) {
-			$sql = "select uname from userBasic where udocid='$user_id'";
+			// sqlite_query($db,"create table dfeedback(dfid integer primary key,
+			// 		uname varchar(20) not null,dname varchar(20) not null,udate date not null,
+			// 		info text
+			// 		);");
+			$sql = "select uname from userBasic";
 			$res = sqlite_unbuffered_query ( $db, $sql );
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
-				$user_To = $item ["uname"];
-				$sql = "insert into dfeedback values(null,'$user_To','$user_name','$dateToday','$content')";
+				$user_One=$item["uname"];
+				$sql = "insert into dfeedback values(null,'$user_One','$user_name','$dateToday','$content')";
 				sqlite_query ( $db, $sql );
 			}
 		} else {
-			$sql = "insert into dfeedback values(null,'$user_To','$user_name','$dateToday','$content')";
+			$sql = "insert into dfeedback values(null,'$userTo','$user_name','$dateToday','$content')";
 			sqlite_query ( $db, $sql );
-			fclose ( $handle );
+// 			fclose ( $handle );
 		}
 		$file = $url [$j];
 		$result = @unlink ( $file );
