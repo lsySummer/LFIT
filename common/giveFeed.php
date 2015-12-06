@@ -34,7 +34,7 @@
 				session_start ();
 				$user_id = $_SESSION ['gluid'];
 				$db = sqlite_open ( "../lfit.db", 0666, $sqliteerror );
-				$sql = "select uid,uname from userBasic where udocid='$user_id'";
+				$sql = "select uid,uname from userBasic";
 				$res = sqlite_unbuffered_query ( $db, $sql );
 				$uidarr = array ();
 				$unamearr = array();
