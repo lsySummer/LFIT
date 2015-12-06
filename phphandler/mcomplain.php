@@ -3,7 +3,6 @@
 $touser =  htmlspecialchars($_POST['touser']);
 $todc =  htmlspecialchars($_POST['todc']);
 $acId =  htmlspecialchars($_POST['acId']);
-echo $acId;
 $db = sqlite_open("../lfit.db",0666,$sqliteerror);
 $sql="select * from complain where cid='$acId'";
 $res2 = sqlite_unbuffered_query ( $db, $sql );
@@ -26,6 +25,6 @@ $sql="insert into unews values(null,'$uid','$dateToday','$touser')";
 sqlite_query($db,$sql);
 $sql="insert into unews values(null,'$toid','$dateToday','$todc')";
 sqlite_query($db,$sql);
-echo "<script language=javascript>alert('处理成功！');
-	history.back();</script>";
+echo "<script language=javascript>alert('处理成功！');</script>";
+echo "已成功处理投诉！";
 ?>

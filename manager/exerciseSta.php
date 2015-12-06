@@ -11,6 +11,9 @@
 
 <body>
 
+<div style="text-align:center;position: absolute;left: 5px;top: 5px;">
+	<h3><span class="label label-default" id="lastSeven">最近用户数量：</span></h3>
+</div>
 			<script type="text/javascript" src="../jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
 <script type="text/javascript">
 var LineChart = function( options ) {
@@ -258,13 +261,14 @@ chart.populate([
  { label: datearr[3], value: numarr[3] },
  { label: datearr[4], value: numarr[4] },
 ]);
+document.getElementById("lastSeven").innerText="最近用户数量："+numarr[0]+" "+numarr[1]+" "
++numarr[2]+" "+numarr[3]+" "+numarr[4];
 }
 
 
 </script>
 
-<div style="text-align:center;position: absolute;left: 5px;top: 5px;">
-</div>
+
 
 </body>
 

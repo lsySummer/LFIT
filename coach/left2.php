@@ -60,7 +60,7 @@
 					交流
 				</li>
 				<li>
-					<a href="../coach/news.php"  target="frame4" style="color:#7fa731">消息</a>
+					<a href="../common/news.php"  target="frame4" style="color:#7fa731">消息</a>
 				</li>
 				
 			</ul>

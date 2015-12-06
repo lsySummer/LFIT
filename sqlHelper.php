@@ -14,16 +14,16 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // sqlite_query($db,"create table dataHealth(did integer primary key,
 // 		uid int(11) not null,udate date not null,weight int(11) not null
 // 		,hr int(11) not null,bp int(11) not null);");
-// sqlite_query($db,"drop table dfeedback");
-// sqlite_query($db,"drop table cfeedback");
-// sqlite_query($db,"create table dfeedback(dfid integer primary key,
-// 		uname varchar(20) not null,dname varchar(20) not null,udate date not null,
-// 		info text
-// 		);");
-// sqlite_query($db,"create table cfeedback(cfid integer primary key,
-// 		uname varchar(20),cname varchar(20) not null,udate date not null,
-// 		info text
-// 		);");
+sqlite_query($db,"drop table dfeedback");
+sqlite_query($db,"drop table cfeedback");
+sqlite_query($db,"create table dfeedback(dfid integer primary key,
+		uname varchar(20) not null,dname varchar(20) not null,udate date not null,
+		info text
+		);");
+sqlite_query($db,"create table cfeedback(cfid integer primary key,
+		uname varchar(20),cname varchar(20) not null,udate date not null,
+		info text
+		);");
 // sqlite_query($db,"drop table uactivity");
 // sqlite_query($db,"create table uactivity(uaid integer primary key,
 // 		uid int(11) not null,acid int(11) not null);");
@@ -38,11 +38,11 @@ if ($db = sqlite_open("lfit.db",0666,$sqliteerror)) {
 // 	place text not null,info text not null
 // 		,inum int(11) not null
 // 		);");
-sqlite_query($db,"drop table complain");
-sqlite_query($db,"create table complain(cid integer primary key,
-		uid int(11) not null,toid int(11) not null,info text not null,
-		img text
-		);");
+// sqlite_query($db,"drop table complain");
+// sqlite_query($db,"create table complain(cid integer primary key,
+// 		uid int(11) not null,toid int(11) not null,info text not null,
+// 		img text
+// 		);");
 // sqlite_query($db,"create table unews(unid integer primary key,uid int(11),
 // 		udate date not null,info text not null
 // 		);");

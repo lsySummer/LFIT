@@ -47,9 +47,9 @@
 				}
 				$j=0;
 				foreach ( $uidarr as $user ) {
-					echo "User " . $unamearr[$j].":<br/>";
 					$j++;
 					if (file_exists ( "../xmldata/$user.xml" )) {
+					echo "User " . $unamearr[$j].":<br/>";
 						$xml_array = simplexml_load_file ( "../xmldata/$user.xml" );
 						$i = 0;
 						foreach ( $xml_array as $tmp ) {
@@ -81,8 +81,6 @@
 						echo "<br/>";
 						echo "-----------------------------<br/>";
 					} else {
-						echo "暂无数据<br/>";
-						echo "-----------------------------<br/>";
 					}
 				}
 				?>
@@ -97,7 +95,7 @@
 			</script>
 		<input type="text" size="20" name="upfile" id="upfile" style="border:1px dotted #ccc" readonly>  
 <input type="button" value="上传建议" class="a-upload" onclick="path.click()" style="border:1px solid #ccc;background:#fff">  
-<input type="file" id="path" style="display:none" onchange="upfile.value=this.value" name="file">
+<input type="file" id="path" multiple style="display:none" onchange="upfile.value=this.value" name="file[]">
 <input type="submit" class="a-upload">
 				</form>
 		</div>

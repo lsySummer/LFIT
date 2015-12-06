@@ -38,7 +38,7 @@
 								session_start();
 								$user_name = $_SESSION['gluname'];
 								$db = sqlite_open("../lfit.db",0666,$sqliteerror);
-								$sql = "select * from dfeedback where uname='$user_name'";
+								$sql = "select * from dfeedback where uname='$user_name' order by udate desc";
 								$res = sqlite_unbuffered_query ( $db, $sql );
 								while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
 								$info=$item["info"];
@@ -85,7 +85,7 @@
 							<p style="margin-top:10px;font-size:15px">
 									<?php
 								$db = sqlite_open("../lfit.db",0666,$sqliteerror);
-								$sql = "select * from cfeedback where uname='$user_name'";
+								$sql = "select * from cfeedback where uname='$user_name' order by udate desc";
 								$res = sqlite_unbuffered_query ( $db, $sql );
 								while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
 								$info=$item["info"];

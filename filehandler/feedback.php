@@ -47,8 +47,8 @@ for($j = 0; $j < $i; $j ++) {
 			sqlite_query ( $db, $sql );
 			fclose ( $handle );
 		}
-		echo "<script language=javascript>alert(''.$j.'上传成功');
-history.back();</script>";
+		echo "<script language=javascript>alert(''.$j.'上传成功');</script>";
+		echo "已成功上传！";
 	} elseif ($type [$j] == ".xml" || $type [$j] == ".txt") {
 		$handle = fopen ( $url [$j], 'r' );
 		$content = '';
@@ -59,19 +59,20 @@ history.back();</script>";
 			$sql = "select uname from userBasic where udocid='$user_id'";
 			$res = sqlite_unbuffered_query ( $db, $sql );
 			while ( $item = sqlite_fetch_array ( $res, SQLITE_ASSOC ) ) {
-				$userTo = $item ["uname"];
-				$sql = "insert into dfeedback values(null,'$userTo','$user_name','$dateToday','$content')";
+				$user_To = $item ["uname"];
+				$sql = "insert into dfeedback values(null,'$user_To','$user_name','$dateToday','$content')";
 				sqlite_query ( $db, $sql );
 			}
 		} else {
-			$sql = "insert into dfeedback values(null,'$userTo','$user_name','$dateToday','$content')";
+			$sql = "insert into dfeedback values(null,'$user_To','$user_name','$dateToday','$content')";
 			sqlite_query ( $db, $sql );
 			fclose ( $handle );
 		}
 		$file = $url [$j];
 		$result = @unlink ( $file );
 		echo "<script language=javascript>alert('上传成功');
-history.back();</script>";
+</script>";
+		echo "已成功上传！";
 	} else {
 		echo "<script language=javascript>alert('上传格式不符合要求！请重新导入');
 		history.back();</script>";

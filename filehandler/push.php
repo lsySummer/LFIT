@@ -41,6 +41,7 @@ if ($toGroup == - 1) {
 		sqlite_query($db,$sql);
 }
 echo "<script language=javascript>alert('已成功发布！');</script>";
+echo "发布成功！";
 exit();
 }
 ?>

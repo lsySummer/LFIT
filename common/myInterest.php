@@ -116,7 +116,6 @@
 				$res1 = sqlite_unbuffered_query ( $db, $sql );
 				if ( $item1 = sqlite_fetch_array ( $res1, SQLITE_ASSOC ) ) {
 					$name=$item1["place"];
-				}
 				echo '
 					<div class="interest" style="border:3px solid #f7f7f7;height:400px">
 						<div class="thumbnail" style="border:0px solid red;">
@@ -135,9 +134,10 @@
 						</div>
 					</div>
 			';
+				}
 			}
-			if($isNull){echo '<span style="font-size:20px">您尚未加入兴趣组！</span>'; };
 			};
+			if($isNull){echo '<span style="font-size:20px">暂无推送信息！</span>'; };
 			}
 		?>
 			<!-- 缩略图end-->

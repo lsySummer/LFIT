@@ -46,9 +46,9 @@
 				}
 				$j=0;
 				foreach ( $uidarr as $user ) {
-					echo "User " . $unamearr[$j].":<br/>";
 					$j++;
 					if (file_exists ( "../xmldata/$user.xml" )) {
+					echo "User " . $unamearr[$j].":<br/>";
 						$xml_array = simplexml_load_file ( "../xmldata/$user.xml" );
 						$i = 0;
 						foreach ( $xml_array as $tmp ) {
@@ -80,8 +80,6 @@
 						echo "<br/>";
 						echo "-----------------------------<br/>";
 					} else {
-						echo "暂无数据<br/>";
-						echo "-----------------------------<br/>";
 					}
 				}
 				?>

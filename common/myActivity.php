@@ -50,7 +50,7 @@
 			<p class="acP">
     		编号：' . $aid . '<br/>
     		时间：' . $atime . '<br/>地点：' . $place . '<br/>详情：' . $info . '</p>
-			<button id=' . $aid . ' onclick="setValue(' . $uaid . ')" class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">删除活动</button>
+			<button id=' . $aid . ' onclick="setValue(' . $uaid . ')" class="btn btn-primary btn-success btn-block" data-toggle="modal"  data-target="#myModal">退出活动</button>
 	</div>
 		';}
 			}
